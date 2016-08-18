@@ -131,6 +131,18 @@ append_file() {
 
 # replace_file <file> <permissions> <patch file>
 replace_file() {
+  cp /tmp/init.qcom.rc /tmp/ramdisk/init.qcom.rc;
+  chmod 750 /tmp/ramdisk/init.qcom.rc;
+}
+
+# replace_file <file> <permissions> <patch file>
+replace_file() {
+  cp /tmp/init.qcom.power.rc /tmp/ramdisk/init.qcom.power.rc;
+  chmod 750 /tmp/ramdisk/init.qcom.power.rc;
+}
+
+# replace_file <file> <permissions> <patch file>
+replace_file() {
   cp -fp $patch/$3 $1;
   chmod $2 $1;
 }

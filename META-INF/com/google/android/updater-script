@@ -46,6 +46,9 @@ ifelse(file_getprop("/tmp/anykernel/anykernel.sh", "do.modules") == 1,
           set_perm_recursive(0, 0, 0755, 0644, "/system/lib/modules"));
   )
 );
+delete("/system/bin/mpdecision");
+delete("/system/bin/thermanager");
+delete("/system/etc/thermanager.xml");
 ifelse(file_getprop("/tmp/anykernel/anykernel.sh", "do.cleanup") == 1,
   (delete_recursive("/tmp/anykernel");
   )
